@@ -1,7 +1,7 @@
 #+REVEAL_THEME: dracula
 #+REVEAL_HLEVEL: 2
 #+REVEAL_TITLE_SLIDE:
-#+OPTIONS: toc:nil
+#+OPTIONS: toc:nil reveal_embed_local_resources:t
 #+REVEAL_EXTRA_CSS: ./custom.css
 
 * React Native Setup
