@@ -1,0 +1,26 @@
+#+REVEAL_THEME: dracula
+#+REVEAL_HLEVEL: 2
+#+REVEAL_TITLE_SLIDE: React Native Workshop - Setup
+#+OPTIONS: reveal_embed_local_resources:t
+
+* React Native Setup
+* Setup
+** Windows / Ubuntu
+*** WSL
+Install WSL on widows by running ~wsl --install~ in powershell. Read more setup instructions [[https://learn.microsoft.com/en-us/windows/wsl/install][here]]
+*** NodeJS
+In ~WSL/ Ubuntu~ run the following to install nodejs ([[https://github.com/nodesource/distributions][NodeSource]])
+#+begin_src bash
+sudo apt update && sudo apt upgrade
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+#+end_src
+
+This will install Node.js v18.*.*, the LTS version of node
+*** Expo
+*** VSCode
+** MacOS
+*** Homebrew
+*** NodeJS
+*** Expo
+*** VSCode
