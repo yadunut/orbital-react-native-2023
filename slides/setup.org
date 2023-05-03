@@ -8,8 +8,8 @@
 You can hit escape and navigate with arrow keys to view a quick overview / go to a specific slide in the deck
 ** Prerequisites
 1. Git and its relevant workflows
-2. Javascript (with ES6)
-3.
+2. Javascript (ES6 syntax)
+3. Basic React Knowledge (Referesher Attached)
 
 ** Windows / Ubuntu
 *** WSL
@@ -27,6 +27,12 @@ This will install Node.js v18.*.*, the LTS version of node
 Download VSCode [[https://code.visualstudio.com/download][here]]
 Install the ~WSL~ extension
 ** MacOS
+Start off with opening up your terminal and run
+#+begin_src bash
+xcode-select --install
+#+end_src
+
+This will install relevant dependencies you will need
 *** Homebrew
 [[https://brew.sh/][Homebrew]] is a package manager for macOS. The installation instructions can be found on the website or paste the following into the macOS terminal
 #+begin_src bash
@@ -46,6 +52,7 @@ brew install --cask visual-studio-code
 With that, we are ready to get started!
 
 ** Install expo
+Expo is a library / framework built ontop of react-native. As of now, there are little to no reasons not to use expo when starting new react-native projects. The only hiccup you will have is when adding libraries with native modules, but solutions to this will be discussed in the 2nd section
 #+begin_src bash
 npx expo -h
 #+end_src
@@ -58,8 +65,20 @@ npx create-expo-app orbital-app
 cd orbital-app
 npm i
 code .
-# This should open the current directory in vscode
 #+end_src
-Open this directory in VSCode
+The last line opens the directory in VSCode
 
-** Install the Expo Go App on your mobile phones
+*** Expo Go
+[[https://docs.expo.dev/get-started/expo-go/][Expo Go]] is a mobile app used for development of expo projects. You can install it from the link above.
+
+Or you can use iOS an android simulator, which is what I will be using for the demos
+*** Running the app
+#+begin_src bash
+npx expo start
+#+end_src
+
+* React Refresher
+https://react.dev/learn/thinking-in-react
+** Functional components
+** Stateless Components
+** Stateful Components
