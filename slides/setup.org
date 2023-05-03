@@ -1,10 +1,16 @@
 #+REVEAL_THEME: dracula
 #+REVEAL_HLEVEL: 2
-#+REVEAL_TITLE_SLIDE: React Native Workshop - Setup
-#+OPTIONS: reveal_embed_local_resources:t
+#+REVEAL_TITLE_SLIDE:
+#+OPTIONS: toc:nil
+#+REVEAL_EXTRA_CSS: ./custom.css
 
 * React Native Setup
-* Setup
+You can hit escape and navigate with arrow keys to view a quick overview / go to a specific slide in the deck
+** Prerequisites
+1. Git and its relevant workflows
+2. Javascript (with ES6)
+3.
+
 ** Windows / Ubuntu
 *** WSL
 Install WSL on widows by running ~wsl --install~ in powershell. Read more setup instructions [[https://learn.microsoft.com/en-us/windows/wsl/install][here]]
@@ -17,10 +23,43 @@ sudo apt-get install -y nodejs
 #+end_src
 
 This will install Node.js v18.*.*, the LTS version of node
-*** Expo
 *** VSCode
+Download VSCode [[https://code.visualstudio.com/download][here]]
+Install the ~WSL~ extension
 ** MacOS
 *** Homebrew
+[[https://brew.sh/][Homebrew]] is a package manager for macOS. The installation instructions can be found on the website or paste the following into the macOS terminal
+#+begin_src bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#+end_src
 *** NodeJS
-*** Expo
+Run
+#+begin_src bash
+brew install node@18
+#+end_src
 *** VSCode
+You can install vscode with homebrew also!
+#+begin_src bash
+brew install --cask visual-studio-code
+#+end_src
+
+With that, we are ready to get started!
+
+** Install expo
+#+begin_src bash
+npx expo -h
+#+end_src
+This will download the expo binary and will list out all options for expo
+** Initialize a new Expo App Repository
+#+begin_src bash
+mkdir ~/dev
+cd ~/dev
+npx create-expo-app orbital-app
+cd orbital-app
+npm i
+code .
+# This should open the current directory in vscode
+#+end_src
+Open this directory in VSCode
+
+** Install the Expo Go App on your mobile phones
