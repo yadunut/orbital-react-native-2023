@@ -9,6 +9,7 @@ You can hit escape and navigate with arrow keys to view a quick overview / go to
 ** Prerequisites
 1. Git and its relevant workflows
 2. Javascript (ES6 syntax)
+3. HTML / CSS
 3. Basic React Knowledge (Referesher Attached)
 
 ** Windows / Ubuntu
@@ -90,6 +91,44 @@ Scan the QR Code with your camera app and you should be ready to go!
 
 
 * React Refresher
+The recommended reading is the [[https://react.dev/learn/thinking-in-react][thinking in react guide]]. It provides a good overview of how to break a website down into its basic components, how to structure each component and to think about what needs to be stored there
+
 ** Functional components
+React has 2 paradigms for creating new components, ~class~ and ~functional~ components. We will only be looking at functional components in
 ** Stateless Components
+The component itself doesn't need to keep any state, and can receive details on what to render from its parent component
+#+begin_src rjsx
+function CommentBox(image, title, body) {
+    <div>
+        <image src={image} />
+        <h3>{title}</h3>
+        <p>{body}</p>
+    </div>
+}
+#+end_src
 ** Stateful Components
+These components need to keep track of state across renders
+#+begin_src rjsx
+function Comment() {
+    const [input, setInput] = useState('');
+  return <View>
+           <TextInput value={input} onChangeText={value => setInput(value)}/>
+         </View>
+}
+#+end_src
+* Exercise 0
+1. Get the app running on your mobile phone / simulator.
+2. Take a look at ~App.js~ and read through the code. Edit the contents to say "Hello ~<yourname>~"
+3. Let us know if you have any questions!
+* Overview of Workshop 1
+1. React Native Components
+2. Documentation
+3. Styling and flexbox layout
+4. UI Libraries
+5. Basic State Management
+
+* Overview of Workshop 2
+This workshop will be more focused on live coding and Q&A. We will be building a TODO app with networking with supabase
+
+* Hope this has been helpful!
+See you on 13th May!

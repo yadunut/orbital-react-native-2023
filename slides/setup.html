@@ -459,6 +459,7 @@ You can hit escape and navigate with arrow keys to view a quick overview / go to
 <ol>
 <li>Git and its relevant workflows</li>
 <li>Javascript (ES6 syntax)</li>
+<li>HTML / CSS</li>
 <li>Basic React Knowledge (Referesher Attached)</li>
 
 </ol>
@@ -635,23 +636,96 @@ Scan the QR Code with your camera app and you should be ready to go!
 <section id="slide-2">
 <h2 id="2"><span class="section-number-2">2.</span> React Refresher</h2>
 <p>
-<a href="https://react.dev/learn/thinking-in-react">https://react.dev/learn/thinking-in-react</a>
+The recommended reading is the <a href="https://react.dev/learn/thinking-in-react">thinking in react guide</a>. It provides a good overview of how to break a website down into its basic components, how to structure each component and to think about what needs to be stored there
 </p>
+
 </section>
 </section>
 <section>
 <section id="slide-2-1">
 <h3 id="2-1"><span class="section-number-3">2.1.</span> Functional components</h3>
+<p>
+React has 2 paradigms for creating new components, <code>class</code> and <code>functional</code> components. We will only be looking at functional components in
+</p>
 </section>
 </section>
 <section>
 <section id="slide-2-2">
 <h3 id="2-2"><span class="section-number-3">2.2.</span> Stateless Components</h3>
+<p>
+The component itself doesn&rsquo;t need to keep any state, and can receive details on what to render from its parent component
+</p>
+<div class="org-src-container">
+
+<pre class="src src-rjsx"><span style="color: #fb4934;">function</span> <span style="color: #fabd2f;">CommentBox</span><span style="color: #fe8019; background-color: #282828;">(</span>image<span style="color: #ebdbb2; background-color: #282828;">,</span> title<span style="color: #ebdbb2; background-color: #282828;">,</span> body<span style="color: #fe8019; background-color: #282828;">)</span> <span style="color: #fe8019; background-color: #282828;">{</span>
+    <span style="color: #fb4934;">&lt;</span>div<span style="color: #fb4934;">&gt;</span>
+        <span style="color: #fb4934;">&lt;</span>image src<span style="color: #fb4934;">=</span><span style="color: #cc241d; background-color: #282828;">{</span>image<span style="color: #cc241d; background-color: #282828;">}</span> /<span style="color: #fb4934;">&gt;</span>
+        <span style="color: #fb4934;">&lt;</span>h3<span style="color: #fb4934;">&gt;</span><span style="color: #cc241d; background-color: #282828;">{</span>title<span style="color: #cc241d; background-color: #282828;">}</span><span style="color: #fb4934;">&lt;</span>/h3<span style="color: #fb4934;">&gt;</span>
+        <span style="color: #fb4934;">&lt;</span>p<span style="color: #fb4934;">&gt;</span><span style="color: #cc241d; background-color: #282828;">{</span>body<span style="color: #cc241d; background-color: #282828;">}</span><span style="color: #fb4934;">&lt;</span>/p<span style="color: #fb4934;">&gt;</span>
+    <span style="color: #fb4934;">&lt;</span>/div<span style="color: #fb4934;">&gt;</span>
+<span style="color: #fe8019; background-color: #282828;">}</span>
+</pre>
+</div>
 </section>
 </section>
 <section>
 <section id="slide-2-3">
 <h3 id="2-3"><span class="section-number-3">2.3.</span> Stateful Components</h3>
+<p>
+These components need to keep track of state across renders
+</p>
+<div class="org-src-container">
+
+<pre class="src src-rjsx"><span style="color: #fb4934;">function</span> <span style="color: #fabd2f;">Comment</span><span style="color: #fe8019; background-color: #282828;">()</span> <span style="color: #fe8019; background-color: #282828;">{</span>
+    <span style="color: #fb4934;">const</span> <span style="color: #cc241d; background-color: #282828;">[</span>input<span style="color: #ebdbb2; background-color: #282828;">,</span> setInput<span style="color: #cc241d; background-color: #282828;">]</span> <span style="color: #fb4934;">=</span> <span style="color: #d3869b; font-weight: bold;">useState</span><span style="color: #cc241d; background-color: #282828;">(</span><span style="color: #b8bb26;">''</span><span style="color: #cc241d; background-color: #282828;">)</span><span style="color: #ebdbb2; background-color: #282828;">;</span>
+  <span style="color: #fb4934;">return</span> <span style="color: #fb4934;">&lt;</span><span style="color: #fabd2f;">View</span><span style="color: #fb4934;">&gt;</span>
+           <span style="color: #fb4934;">&lt;</span><span style="color: #fabd2f;">TextInput</span> value<span style="color: #fb4934;">=</span><span style="color: #cc241d; background-color: #282828;">{</span>input<span style="color: #cc241d; background-color: #282828;">}</span> onChangeText<span style="color: #fb4934;">=</span><span style="color: #cc241d; background-color: #282828;">{</span><span style="color: #83a598;">value</span> <span style="color: #fb4934;">=&gt;</span> <span style="color: #d3869b; font-weight: bold;">setInput</span><span style="color: #b8bb26; background-color: #282828;">(</span>value<span style="color: #b8bb26; background-color: #282828;">)</span><span style="color: #cc241d; background-color: #282828;">}</span>/<span style="color: #fb4934;">&gt;</span>
+         <span style="color: #fb4934;">&lt;</span>/<span style="color: #fabd2f;">View</span><span style="color: #fb4934;">&gt;</span>
+<span style="color: #fe8019; background-color: #282828;">}</span>
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-3">
+<h2 id="3"><span class="section-number-2">3.</span> Exercise 0</h2>
+<ol>
+<li>Get the app running on your mobile phone / simulator.</li>
+<li>Take a look at <code>App.js</code> and read through the code. Edit the contents to say &ldquo;Hello <code>&lt;yourname&gt;</code>&rdquo;</li>
+<li>Let us know if you have any questions!</li>
+
+</ol>
+</section>
+</section>
+<section>
+<section id="slide-4">
+<h2 id="4"><span class="section-number-2">4.</span> Overview of Workshop 1</h2>
+<ol>
+<li>React Native Components</li>
+<li>Documentation</li>
+<li>Styling and flexbox layout</li>
+<li>UI Libraries</li>
+<li>Basic State Management</li>
+
+</ol>
+
+</section>
+</section>
+<section>
+<section id="slide-5">
+<h2 id="5"><span class="section-number-2">5.</span> Overview of Workshop 2</h2>
+<p>
+This workshop will be more focused on live coding and Q&amp;A. We will be building a TODO app with networking with supabase
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-6">
+<h2 id="6"><span class="section-number-2">6.</span> Hope this has been helpful!</h2>
+<p>
+See you on 13th May!
+</p>
 </section>
 </section>
 </div>

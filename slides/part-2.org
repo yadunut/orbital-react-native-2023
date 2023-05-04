@@ -4,4 +4,20 @@
 #+OPTIONS: toc:nil reveal_embed_local_resources:t
 #+REVEAL_EXTRA_CSS: ./custom.css
 
-* TODO Native Modules
+*** Expo Router
+https://expo.github.io/router/docs/
+#+begin_src bash
+npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar
+#+end_src
+
+In ~package.json~
+#+begin_src javascript
+{
+    "main": "index.js"
+}
+#+end_src
+
+Create a new file ~index.js~
+#+begin_src javascript
+import "expo-router/entry";
+#+end_src
