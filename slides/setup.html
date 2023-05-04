@@ -480,13 +480,14 @@ Install WSL on widows by running <code>wsl --install</code> in powershell. Read 
 <section id="slide-1-2-2">
 <h4 id="1-2-2"><span class="section-number-4">1.2.2.</span> NodeJS</h4>
 <p>
-In <code>WSL/ Ubuntu</code> run the following to install nodejs (<a href="https://github.com/nodesource/distributions">NodeSource</a>)
+We will be using <a href="https://volta.sh/">volta</a> to handle node versions
 </p>
 <div class="org-src-container">
 
 <pre class="src src-bash"><span style="color: #fabd2f;">sudo</span> apt update &amp;&amp; <span style="color: #fabd2f;">sudo</span> apt upgrade
-<span style="color: #fabd2f;">curl</span> -fsSL https://deb.nodesource.com/setup_18.x | <span style="color: #fabd2f;">sudo</span> -E bash - &amp;&amp;<span style="color: #b8bb26;">\</span>
-<span style="color: #fabd2f;">sudo</span> apt-get install -y nodejs
+<span style="color: #fabd2f;">curl</span> https://get.volta.sh | bash
+<span style="color: #fe8019;">source</span> ~/.bashrc
+volta install node@<span style="color: #d3869b; font-weight: bold;">18</span>
 </pre>
 </div>
 
@@ -536,7 +537,9 @@ Run
 </p>
 <div class="org-src-container">
 
-<pre class="src src-bash">brew install node@<span style="color: #d3869b; font-weight: bold;">18</span>
+<pre class="src src-bash"><span style="color: #fabd2f;">curl</span> https://get.volta.sh | bash
+<span style="color: #fe8019;">source</span> ~/.zshrc
+volta install node@<span style="color: #d3869b; font-weight: bold;">18</span>
 </pre>
 </div>
 </section>
@@ -601,13 +604,30 @@ The last line opens the directory in VSCode
 Or you can use iOS an android simulator, which is what I will be using for the demos
 </p>
 </section>
-<section id="slide-1-5-2">
-<h4 id="1-5-2"><span class="section-number-4">1.5.2.</span> Running the app</h4>
+</section>
+<section>
+<section id="slide-1-6">
+<h3 id="1-6"><span class="section-number-3">1.6.</span> Running the app</h3>
 <div class="org-src-container">
 
 <pre class="src src-bash">npx expo start
 </pre>
 </div>
+
+<p>
+If you have an android device or are facing issues with connection, you can try to run
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">npx expo start --tunnel
+</pre>
+</div>
+
+<p>
+Scan the QR Code with your camera app and you should be ready to go!
+</p>
+
 
 </section>
 </section>

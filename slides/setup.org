@@ -15,11 +15,12 @@ You can hit escape and navigate with arrow keys to view a quick overview / go to
 *** WSL
 Install WSL on widows by running ~wsl --install~ in powershell. Read more setup instructions [[https://learn.microsoft.com/en-us/windows/wsl/install][here]]
 *** NodeJS
-In ~WSL/ Ubuntu~ run the following to install nodejs ([[https://github.com/nodesource/distributions][NodeSource]])
+We will be using [[https://volta.sh/][volta]] to handle node versions
 #+begin_src bash
 sudo apt update && sudo apt upgrade
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+curl https://get.volta.sh | bash
+source ~/.bashrc
+volta install node@18
 #+end_src
 
 This will install Node.js v18.*.*, the LTS version of node
@@ -41,7 +42,9 @@ This will install relevant dependencies you will need
 *** NodeJS
 Run
 #+begin_src bash
-brew install node@18
+curl https://get.volta.sh | bash
+source ~/.zshrc
+volta install node@18
 #+end_src
 *** VSCode
 You can install vscode with homebrew also!
@@ -72,13 +75,21 @@ The last line opens the directory in VSCode
 [[https://docs.expo.dev/get-started/expo-go/][Expo Go]] is a mobile app used for development of expo projects. You can install it from the link above.
 
 Or you can use iOS an android simulator, which is what I will be using for the demos
-*** Running the app
+** Running the app
 #+begin_src bash
 npx expo start
 #+end_src
 
+If you have an android device or are facing issues with connection, you can try to run
+
+#+begin_src bash
+npx expo start --tunnel
+#+end_src
+
+Scan the QR Code with your camera app and you should be ready to go!
+
+
 * React Refresher
-https://react.dev/learn/thinking-in-react
 ** Functional components
 ** Stateless Components
 ** Stateful Components
