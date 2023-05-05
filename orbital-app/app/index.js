@@ -1,11 +1,16 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Link } from "expo-router";
+import { StyleSheet, View } from "react-native";
+import { Button, Text } from "react-native-paper";
 
 export default function Page() {
   return (
     <View style={styles.container}>
       <View style={styles.main}>
-        <Text style={styles.title}>Hello World</Text>
-        <Text style={styles.subtitle}>This is the first page of your app.</Text>
+        <Link href="/todo" asChild><Button style={styles.button} mode="contained">Todo App</Button></Link>
+        <Link href="/counter" asChild><Button style={styles.button} mode="contained">Counter App</Button></Link>
+        <Link href="/example2" asChild><Button style={styles.button} mode="contained">Example2</Button></Link>
+        <Link href="/example3" asChild><Button style={styles.button} mode="contained">Example3</Button></Link>
+
       </View>
     </View>
   );
@@ -15,7 +20,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    padding: 24,
+    padding: 24
   },
   main: {
     flex: 1,
@@ -23,12 +28,7 @@ const styles = StyleSheet.create({
     maxWidth: 960,
     marginHorizontal: "auto",
   },
-  title: {
-    fontSize: 64,
-    fontWeight: "bold",
-  },
-  subtitle: {
-    fontSize: 36,
-    color: "#38434D",
-  },
+  button: {
+    marginTop: 10,
+  }
 });

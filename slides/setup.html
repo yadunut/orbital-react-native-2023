@@ -165,25 +165,47 @@ code .
 <h1 id="react-native">React Native</h1>
 <p>React Native is a framework which allows us to write code in a similar syntax to React. It allows for web developers to get started writing code for both mobile platforms iOS and Android quickly</p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-marpit-advanced-background="background" data-marpit-advanced-background-split="left" style="--marpit-advanced-background-split:40%;"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/Counter.png&quot;);background-size:60%;"></figure></div></section></foreignObject><foreignObject width="60%" height="720" x="40%"><section id="15" data-marpit-advanced-background="content" data-marpit-advanced-background-split="left" style="--marpit-advanced-background-split:40%;">
+<h1 id="example-react-native-app">Example React Native App</h1>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-jsx"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">Counter</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> [counter, setCounter] = <span class="hljs-title function_">useState</span>(<span class="hljs-number">0</span>);
+  <span class="hljs-keyword">const</span> <span class="hljs-title function_">incrementCounter</span> = (<span class="hljs-params"></span>) =&gt; {
+    <span class="hljs-title function_">setCounter</span>(counter + <span class="hljs-number">1</span>);
+  }
+  <span class="hljs-keyword">const</span> <span class="hljs-title function_">decrementCounter</span> = (<span class="hljs-params"></span>) =&gt; {
+    <span class="hljs-title function_">setCounter</span>(counter - <span class="hljs-number">1</span>);
+  }
+
+  <span class="hljs-keyword">return</span> (
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{styles.container}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>{counter}<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> 
+        <span class="hljs-attr">onPress</span>=<span class="hljs-string">{()</span> =&gt;</span> incrementCounter()}&gt;
+            Increment Counter
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> 
+        <span class="hljs-attr">onPress</span>=<span class="hljs-string">{()</span> =&gt;</span> decrementCounter()}&gt;
+            Decrement Counter Counter
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></span>
+  );
+}
+
+</code></pre>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="left" style=""></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-marpit-advanced-background="background" data-marpit-advanced-background-split="left" style="--marpit-advanced-background-split:50%;"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/rn-components.png&quot;);background-size:100%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720" x="50%"><section id="16" data-marpit-advanced-background="content" data-marpit-advanced-background-split="left" style="--marpit-advanced-background-split:50%;">
 <h2 id="thinking-in-react-in-short">Thinking in React (In short)</h2>
 <ul>
 <li>An App is made up of many different components</li>
 <li>Each component consists of
 <ul>
-<li>Logic (What happens when a button is pressed, send data back to the server, etc)</li>
-<li>User Interface (UI) (e.g. the colour of the button, positioning of the button, etc)</li>
-</ul>
-</li>
-<li>Try to build reuseable components
-<ul>
-<li>E.g. a similar button is used in many places</li>
-<li>Reduces code duplication, easier to maintain</li>
+<li>Logic (What happens when a button is pressed)</li>
+<li>User Interface (UI) (e.g. the colour and positioning of the button)</li>
 </ul>
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16">
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="left" style=""></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17">
 <h2 id="functional-components">Functional components</h2>
 <p>React has 2 paradigms for creating new components, <code>class</code> and <code>functional</code> components. We will only be looking at functional components in</p>
 <h2 id="stateless-components">Stateless Components</h2>
@@ -197,7 +219,7 @@ code .
 }
 </code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18">
 <h2 id="stateful-components">Stateful Components</h2>
 <p>These components need to keep track of state across renders</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>function Comment() {
@@ -208,7 +230,7 @@ code .
 }
 </code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19">
 <h1 id="exercise-0">Exercise 0</h1>
 <ol>
 <li>Get the app running on your mobile phone / simulator.</li>
@@ -216,7 +238,7 @@ code .
 <li>Let us know if you have any questions!</li>
 </ol>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20">
 <h1 id="overview-of-workshop-1">Overview of Workshop 1</h1>
 <ol>
 <li>React Native Components</li>
@@ -228,7 +250,7 @@ code .
 <h1 id="overview-of-workshop-2">Overview of Workshop 2</h1>
 <p>This workshop will be more focused on live coding and Q&amp;A. We will be building a TODO app with networking with supabase</p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21">
 <h1 id="hope-this-has-been-helpful">Hope this has been helpful!</h1>
 <p>See you on 13th May!</p>
 </section>

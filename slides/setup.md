@@ -214,17 +214,46 @@ Highly recommended to read [Thinking in React](https://react.dev/learn/thinking-
 React Native is a framework which allows us to write code in a similar syntax to React. It allows for web developers to get started writing code for both mobile platforms iOS and Android quickly
 
 ---
+![bg left:40% 60%](images/Counter.png)
+
+# Example React Native App
+```jsx
+export default function Counter() {
+  const [counter, setCounter] = useState(0);
+  const incrementCounter = () => {
+    setCounter(counter + 1);
+  }
+  const decrementCounter = () => {
+    setCounter(counter - 1);
+  }
+
+  return (
+    <View style={styles.container}>
+      <Text>{counter}</Text>
+      <Button 
+        onPress={() => incrementCounter()}>
+            Increment Counter
+      </Button>
+      <Button 
+        onPress={() => decrementCounter()}>
+            Decrement Counter Counter
+      </Button>
+    </View>
+  );
+}
+
+```
+
+---
+
+![bg left:50% 100%](images/rn-components.png)
 
 ## Thinking in React (In short)
 
 -   An App is made up of many different components
 -   Each component consists of
-    -   Logic (What happens when a button is pressed, send data back to the server, etc)
-    -   User Interface (UI) (e.g. the colour of the button, positioning of the button, etc)
--   Try to build reuseable components
-    -   E.g. a similar button is used in many places
-    -   Reduces code duplication, easier to maintain
-
+    -   Logic (What happens when a button is pressed)
+    -   User Interface (UI) (e.g. the colour and positioning of the button)
 ---
 
 ## Functional components
