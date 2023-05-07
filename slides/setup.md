@@ -125,7 +125,7 @@ Or you can use iOS / android simulator, which is what I will be using for the de
 
     npx expo start
 
-If you have an android device or are facing issues with connection, you can try to run
+If you have an android device or are facing issues with connection (such as when you are not connected to the same wifi network), you can try to run
 
     npx expo start --tunnel
 
@@ -256,38 +256,6 @@ export default function Counter() {
     -   User Interface (UI) (e.g. the colour and positioning of the button)
 ---
 
-## Functional components
-
-React has 2 paradigms for creating new components, `class` and `functional` components. We will only be looking at functional components in
-
-
-## Stateless Components
-
-The component itself doesn&rsquo;t need to keep any state, and can receive details on what to render from its parent component
-
-    function CommentBox(image, title, body) {
-        <div>
-            <image src={image} />
-            <h3>{title}</h3>
-            <p>{body}</p>
-        </div>
-    }
-
----
-
-## Stateful Components
-
-These components need to keep track of state across renders
-
-    function Comment() {
-        const [input, setInput] = useState('');
-      return <View>
-               <TextInput value={input} onChangeText={value => setInput(value)}/>
-             </View>
-    }
-
----
-
 # Exercise 0
 
 1.  Get the app running on your mobile phone / simulator.
@@ -305,13 +273,11 @@ These components need to keep track of state across renders
 5.  Basic State Management
 
 
-# Overview of Workshop 2
-
-This workshop will be more focused on live coding and Q&A. We will be building a TODO app with networking with supabase
-
 ---
 
 # Hope this has been helpful!
 
 See you on 13th May!
+
+If you face any issues please feel free to contact me at orbital \<at\> yadunut \<dot\> com
 
