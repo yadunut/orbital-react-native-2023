@@ -131,8 +131,10 @@ function CatFactBox() {
 ---
 
 ## React Components
+All React applications are built from isolated pieces of UI caled components
 - Only 1 top level component per component
 TODO: Show example
+
 
 ```jsx
 const HelloWorld = () => <div>Hello World</div>
@@ -172,6 +174,8 @@ function App() {
 ---
 
 ## Props
+
+Props is how react components communcate with each other. Every parent componnt can pass information to its child compnents by giving them props.
 
 ## Thinking in React
 
