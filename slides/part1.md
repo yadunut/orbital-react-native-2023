@@ -29,7 +29,11 @@ marp: true
 <!-- _footer: Overview -->
 
 ## Part 2
-
+- Multi Page Applications
+- Networking
+- Supabase
+- dotenv
+- Cameras and Image Picker
 ---
 # Setting Expectations
 
@@ -50,7 +54,18 @@ marp: true
 ---
 # What we'll be building
 
-TODO: INSERT IMAGE OF TODO APP HERE
+![bg left 90% 70%](images/todo-app.png)
+
+---
+# React 
+
+React is a library for writing websites. It gained popularity and has almost become the standard to writing websites. The main aspect of React is JSX (Javascript XML), which allows us to write HTML code in Javascript
+
+Highly recommended to read [Thinking in React](https://react.dev/learn/thinking-in-react) before the main workshop date!
+
+# React Native
+
+React Native is a framework which allows us to write code in a similar syntax to React. It allows for web developers to get started writing code for both mobile platforms iOS and Android quickly
 
 ---
 <!-- _footer: Recap -->
@@ -96,7 +111,7 @@ This will setup ~/dev as your development directory and create a folder called o
 
 ---
 <!-- _footer: Recap -->
-## ES6
+## Javascript
 <!--Open node and show demo of this-->
 
 - Arrow Syntax
@@ -108,10 +123,27 @@ const add = (a, b) => a + b
 const a = [1, 2, 3]
 const b = [...a, 4, 5, 6] // 1, 2, 3, 4, 5, 6
 ```
+
+---
+<!-- _footer: Recap -->
+## Javascript
+- Javascript Objects
+  - Effectively a Dictionary / Hashmap
+```javascript
+const obj = {
+    a: 5,
+    b: "name",
+    c: { you: 'can', even: 'nest', them: 'too!' }
+}
+obj.a // 5
+obj['b'] // 5
+obj.c.you // can
+```
 - Destructuring
 ```javascript
 const {a, b} = {a: 5, b: 6} // a = 5, b = 6
 ```
+
 
 ---
 <!-- _footer: Recap -->
@@ -129,13 +161,12 @@ function CatFactBox() {
 
 ---
 ## React Components
-All React applications are built from isolated pieces of UI caled components
-- Only 1 top level component per component
+All React applications are built from isolated pieces of UI called components
 
 ```jsx
 const Example1 = () => <div>Hello World</div>
 
-function Example2() {
+function HelloWorld() {
     return <div>Hello World</div>;
 }
 
@@ -143,6 +174,7 @@ function BigComponent() {
 return <div><HelloWorld /></div>;
 }
 ```
+- Only 1 top level component per component
 ```jsx
 function NOT_ALLOWED() {
     return (
@@ -192,28 +224,36 @@ Read more about them [here](https://reactnative.dev/docs/view)
 ## Text
 - Displays text :)
 - Children can either be string or other Text Components
-- Why have embedded Text components? For styling!
 ```jsx
 const styles = StyleSheet.create({
   baseText: { fontFamily: 'Cochin' },
-  titleText: { fontSize: 20, fontWeight: 'bold' },
 });
 ...
- <Text style={styles.baseText}>
-      <Text style={styles.titleText}>{titleText}</Text>
-      <Text numberOfLines={5}>{bodyText}</Text>
-      {'\n done!'}
-</Text>
+ <Text style={styles.baseText}>Some Text</Text>
+```
+
+---
+### Styling
+<!-- Go to URL and go through flexbox -->
+- Names and values usually match CSS except written in camelCase:  e.g. `backgroundColor` instead of `background-color`
+- Styling similar to web except layout of elements heavily use flexbox
+- The best flexbox reference is [this](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- Another resource for learning flexbox in context of react-native is [here](https://reactnative.dev/docs/flexbox)
+- Default `flex-direction: 'column'`
+
+---
+### Images
+- Similar to the `img` component in HTML, allows you to add images to the app
+- You can reference either static images (locally) or network images
+```jsx
+// Static
+<Image source={require('./my-icon.png')}>
+// Network
+<IMage source={{uri: 'https://example.com'}}>
 ```
 
 ---
 ## Props
-
-<!-- Go to VSCode to show htmlInJS -->
-<!-- Lets write some code to try to create a users avatar -->
-<!-- Create Avatar Component without props -->
-<!-- Create Avatar Component with props -->
-
 Props is how react components communcate with each other. Every parent component can pass information to its child components by giving them props.
 - We've already seen props before, the `style` in `Text` and `View`
 - Props are immutable.
@@ -224,9 +264,10 @@ Props is how react components communcate with each other. Every parent component
 ---
 ## Demo
 <!-- _footer: Demo -->
-Lets try building the header of an instagram post. 
+Lets try building the Header and Image component of an instagram post. 
 
-- On the left we need an profile image and beside it we need the username
+- We need a profile Image, and the username for the header
+- we need an image for the body
 ![bg right](images/sample-header.png)
 
 ---
@@ -270,14 +311,6 @@ function DONT_DO_THIS() {
 ```
 
 ---
-### Styling
-<!-- Go to URL and go through flexbox -->
-- Names and values usually match CSS except written in camelCase:  e.g. `backgroundColor` instead of `background-color`
-- Styling similar to web except layout of elements heavily use flexbox
-- The best flexbox reference is [this](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- Default `flex-direction: 'column'`
-
----
 ### Button
 - Provides a basic button component
 - Allows you to have interactivity
@@ -290,17 +323,6 @@ function DONT_DO_THIS() {
 ```
 
 ---
-### Images
-- Similar to the `img` prop, allows you to add images to the app
-- You can reference either static images (locally) or network images
-```jsx
-// Static
-<Image source={require('./my-icon.png')}>
-// Network
-<IMage source={{uri: 'https://example.com'}}>
-```
-
----
 ### Notches
 An issue with mobile phones nowadays is the notch at the top of the phone. To handle this, Expo provides a library, `SafeAreaContext` we can use to position content around notches, status bars, etc. Read more [here](https://docs.expo.dev/versions/latest/sdk/safe-area-context/)
 
@@ -309,13 +331,15 @@ Install:
 npx expo install react-native-safe-area-context
 ```
 ```jsx
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 
 function SomeComponent() {
   return (
+    <SafeAreaProvider>
     <SafeAreaView>
       <View />
     </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
@@ -323,9 +347,20 @@ function SomeComponent() {
 
 ---
 ## UI Libraries
+- Can help speed up development
+- Most libraries provide pre-styled core components
+- More time to work on business logic as compared to styling
+- [React Native Paper](https://reactnativepaper.com/)
+- [React Native Elements](https://reactnativeelements.com/)
+- [NativeBase](https://nativebase.io/)
+- [styled-component](https://styled-components.com/) or [emotion](https://emotion.sh/docs/introduction)
+
+---
+# Toilet Break / Q&A (5 min)
 
 ---
 ## State Management
+- How do we have data that can be changed?
 
 ---
 <!-- _footer: Exercise 1 -->
@@ -376,14 +411,62 @@ function Component() {
 
 ---
 ### TextInput
-### Flatlist
-## Conditional Rendering
-
-# Lets build a TODO App
-### Display Add Tasks
-### Display tasks
-### Add undone tasks to header
-#### Lifting State Up
+<!-- _footer: Core Components -->
+- Component for inputting text
+```jsx
+function Component() {
+    const [text, setText] = useState('');
+    // Both methods below are equivalent
+    return (<View><TextInput value={text} onChange={t => setText(t)}/></Text>
+    return (<View><TextInput value={text} onChange={setText}/></Text>
+}
+```
 
 ---
+### ScrollView
+- As the name says, its a View that you can scroll!
+- It renders all its components at once, not just the once on the screen, so try not to use this for a long list of items (such as posts / feeds. We have SectionList / Flatlist for that)
+
+```jsx
+<SafeAreaView>
+    <ScrollView>
+        <SomeComponent>
+        <AnotherComponent>
+        <LongComponent>
+    </ScrollView>
+</SafeAreaView>
+```
+
+---
+### FlatList
+- Performant way of rendering lists
+- Most social media apps are lists (posts, feeds, videos, etc)
+
+```jsx
+const data = [{id: 1, title: "ann" }, {id: 2, title: "Bob"}]
+return <FlatList 
+            data={data} 
+            renderItem={({item}) => <Text>{item.title}</Text>} />
+```
+
+
+---
+## Conditional Rendering
+
+```jsx
+const showItem = true;
+return <div>
+    { showItem && <Item /> }
+    { showItem ? <Item /> : <NotItem />}
+</div>;
+```
+
+---
+
+# Lets build a TODO App
+---
+
+# Thanks and see you next week!
+
+Again, feel free to email me at `orbital <at> yadunut <dot>` com
 

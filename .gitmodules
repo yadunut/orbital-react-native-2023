@@ -1,0 +1,3 @@
+[submodule "part-one"]
+	path = part-one
+	url = ./part-one
