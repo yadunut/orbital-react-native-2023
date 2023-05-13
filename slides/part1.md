@@ -14,10 +14,11 @@ marp: true
 - **NOT A DESIGNER**
 
 ---
-# Q&A
-[link](https://app.sli.do/event/1wS9Tq2Nfz2GXRS99Xfd48)
+# Repo
 
-![bg left](images/QR%20Code.png)
+[part-one](https://github.com/yadunut/orbital-rn-part-one)
+
+You can go through the commits to checkout each state of the application
 
 ---
 
