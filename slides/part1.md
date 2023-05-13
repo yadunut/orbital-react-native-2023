@@ -2,7 +2,7 @@
 marp: true
 ---
 
-# Part 1
+# React Native: Part 1
 
 ---
 # About Me
@@ -151,7 +151,7 @@ const d = { ...c, c: 3, d: 4 } // { a: 1, b: 2, c: 3, d: 4}
 - Destructuring
 ```javascript
 const [a, b] = [1, 2, 3] // a = 1, b = 2
-const {c, d} = {c: 5, d: 6} // a = 5, b = 6
+const {c, d} = {c: 5, d: 6} // c = 5, d = 6
 ```
 
 
@@ -259,7 +259,7 @@ const styles = StyleSheet.create({
 // Static
 <Image source={require('./my-icon.png')}>
 // Network
-<IMage source={{uri: 'https://example.com'}}>
+<Image source={{uri: 'https://example.com'}}>
 ```
 
 ---
