@@ -14,6 +14,14 @@ marp: true
 - **NOT A DESIGNER**
 
 ---
+# Q&A
+[link](https://app.sli.do/event/1wS9Tq2Nfz2GXRS99Xfd48)
+
+![bg left](images/QR%20Code.png)
+
+---
+
+
 <!-- _footer: Overview -->
 # Overview
 ## Part 1
@@ -60,8 +68,6 @@ marp: true
 # React 
 
 React is a library for writing websites. It gained popularity and has almost become the standard to writing websites. The main aspect of React is JSX (Javascript XML), which allows us to write HTML code in Javascript
-
-Highly recommended to read [Thinking in React](https://react.dev/learn/thinking-in-react) before the main workshop date!
 
 # React Native
 
@@ -114,21 +120,8 @@ This will setup ~/dev as your development directory and create a folder called o
 ## Javascript
 <!--Open node and show demo of this-->
 
-- Arrow Syntax
-```javascript
-const add = (a, b) => a + b
-```
-- Spreading
-```javascript
-const a = [1, 2, 3]
-const b = [...a, 4, 5, 6] // 1, 2, 3, 4, 5, 6
-```
-
----
-<!-- _footer: Recap -->
-## Javascript
 - Javascript Objects
-  - Effectively a Dictionary / Hashmap
+- Effectively a Dictionary / Hashmap
 ```javascript
 const obj = {
     a: 5,
@@ -139,9 +132,26 @@ obj.a // 5
 obj['b'] // 5
 obj.c.you // can
 ```
+
+- Arrow Syntax
+```javascript
+const add = (a, b) => a + b
+```
+
+---
+<!-- _footer: Recap -->
+## Javascript
+- Spreading
+```javascript
+const a = [1, 2, 3]
+const b = [...a, 4, 5, 6] // 1, 2, 3, 4, 5, 6
+const c = {a: 1, b: 2};
+const d = { ...c, c: 3, d: 4 } // { a: 1, b: 2, c: 3, d: 4}
+```
 - Destructuring
 ```javascript
-const {a, b} = {a: 5, b: 6} // a = 5, b = 6
+const [a, b] = [1, 2, 3] // a = 1, b = 2
+const {c, d} = {c: 5, d: 6} // a = 5, b = 6
 ```
 
 
@@ -464,9 +474,21 @@ return <div>
 ---
 
 # Lets build a TODO App
+![bg left 90% 70%](images/todo-app.png)
+
+---
+
+## Part 2
+- Multi Page Applications
+- Networking
+- Supabase
+- dotenv
+- Cameras and Image Picker
+
 ---
 
 # Thanks and see you next week!
 
-Again, feel free to email me at `orbital <at> yadunut <dot>` com
+Again, feel free to email me at `orbital <at> yadunut <dot> com`
+
 
