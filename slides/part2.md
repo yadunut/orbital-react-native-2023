@@ -113,3 +113,5 @@ npx expo --clear
 --- 
 
 # Setting up Supabase
+- Create an Account on Supabase
+- 
