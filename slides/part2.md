@@ -34,9 +34,12 @@ You can go through the commits to checkout each state of the application
 ---
 
 # Tools we will be using
+
 ## Expo Router
+
 [Expo router](https://expo.github.io/router/docs) is a library for react-native which makes it easy to make multi-page applications
 ## Supabase
+
 [Supabase](https://supabase.com/) is a firebase alternative, which provides features such as authentication, databases, storage and serverless functions. This allows us to build a basic backend with authentication very quickly, and also allows building more complex backends with the serverless functions
 
 ---
@@ -111,7 +114,4 @@ npx expo --clear
 +  },
 ```
 --- 
-
-# Setting up Supabase
-- Create an Account on Supabase
-- 
+# Building a Login and Signup page with Supabase Authentication
