@@ -9,6 +9,7 @@ marp: true
 
 [part-two](https://github.com/yadunut/orbital-rn-part-two)
 
+
 You can go through the commits to checkout each state of the application
 
 ---
@@ -193,7 +194,10 @@ module.exports = {
 ---
 # Creating the Authentication Flow
 - [useEffect](https://react.dev/learn/synchronizing-with-effects)
+  - [Visual Guide to useEffect](https://alexsidorenko.com/blog/useeffect/)
+  - [Can Swyx recreate React Hooks and useState in under 30 min?](https://youtu.be/KJP1E-Y-xyo)
 - [React Contexts](https://react.dev/learn/passing-data-deeply-with-context)
+  - https://kentcdodds.com/blog/how-to-use-react-context-effectively
 ---
 # Creating the Login Pages
 
