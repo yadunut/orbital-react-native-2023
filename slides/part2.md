@@ -21,7 +21,6 @@ You can go through the commits to checkout each state of the application
 - Supabase
 - dotenv
 - Cameras and Image Picker
-- Redux?
 ---
 
 # End Goal
@@ -215,5 +214,3 @@ module.exports = {
 # Feedback
 
 [Link](http://bit.ly/orbital23-mc2-feedback)
-
----
