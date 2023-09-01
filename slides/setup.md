@@ -20,6 +20,11 @@ marp: true
 3.  HTML / CSS
 4.  Basic React Knowledge (Referesher Attached)
 
+## View other slides at
+[Part 1](https://yadunut.github.io/orbital-react-native-2023/slides/part1.html)
+[Part 2 Setup](https://yadunut.github.io/orbital-react-native-2023/slides/part2-setup.html)
+[Part 2](https://yadunut.github.io/orbital-react-native-2023/slides/part2.html)
+
 ---
 
 # Setup Guides for MacOS and Windows / Ubuntu
